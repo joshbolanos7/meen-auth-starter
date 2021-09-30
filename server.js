@@ -35,8 +35,15 @@ app.use('/users', userController);
 const sessionsController = require('./controllers/sessions');
 app.use('/sessions', sessionsController);
 
+app.get('/', (req, res) => {
+	res.render('index.ejs');
+});
 
+//Temporary root route. Please remove me when you add views. 
 
+// app.get('/', (req, res) => {
+//     res.send("Root Route")
+// })
 // Listener
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`server is listening on port: ${PORT}`));
